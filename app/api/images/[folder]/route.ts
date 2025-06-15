@@ -2,11 +2,9 @@ import fs from "fs";
 import path from "path";
 import { NextResponse } from "next/server";
 
-export async function GET(
-  req: Request,
-  { params }: { params: { folder: string } }
-) {
-  const { folder } = params;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function GET(req: any, context: any) {
+  const { folder } = context.params;
 
   const folderPath = path.join(process.cwd(), "public", "Projects", folder);
 
