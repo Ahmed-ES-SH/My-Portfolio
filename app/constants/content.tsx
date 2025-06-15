@@ -1,3 +1,4 @@
+import { IconType } from "react-icons";
 import {
   LuCodeXml,
   LuFolderKanban,
@@ -5,7 +6,13 @@ import {
   LuSquareUserRound,
 } from "react-icons/lu";
 
-export const links = [
+interface linksType {
+  title: { en: string; ar: string };
+  link: string;
+  icon: IconType;
+}
+
+export const links: linksType[] = [
   {
     title: { en: "Home", ar: "الرئيسية" },
     link: "/",
@@ -13,286 +20,18 @@ export const links = [
   },
   {
     title: { en: "About me", ar: "من أنا" },
-    link: "/Aboutme",
+    link: "/about",
     icon: LuSquareUserRound,
   },
   {
     title: { en: "Skills", ar: "المهارات" },
-    link: "/Skills",
+    link: "/skills",
     icon: LuCodeXml,
   },
   {
-    title: { en: "My Projects", ar: "مشاريعي" },
-    link: "/myprojects",
+    title: { en: "My Projects", ar: "أعمالى" },
+    link: "/projects",
     icon: LuFolderKanban,
-  },
-];
-
-export const contet_EN = {
-  head_1: "Hi , i'm",
-  head_2: "Ahmed Esmail ,",
-  p: (
-    <p className="text-gray-200 text-[32px] max-sm:text-[30px] max-sm:W-full">
-      A passionate
-      <span className="text-green-400 px-2 ">
-        {"<Frontend Web Development />"}
-      </span>
-      creating user frindly websites
-    </p>
-  ),
-};
-export const contet_AR = {
-  head_1: "أهلا , أنا  ",
-  head_2: "أحمد إسماعيل  ,",
-  p: (
-    <p className="text-gray-200 text-[32px]">
-      أنا شخص ك
-      <span className="text-green-400 px-2 ">
-        {"<مطور واجهة امامية للمواقع  />"}
-      </span>
-      شغوف بإنشاء مواقع سهلة الإستخدام وذات أعلى كفاءة
-    </p>
-  ),
-};
-
-export const messages_EN = {
-  first_title: "Best Quality",
-
-  secend_title: "Resposive design",
-};
-export const messages_AR = {
-  first_title: "أفضل جودة ",
-
-  secend_title: " تصميم متجاوب  ",
-};
-
-export const about_en = {
-  name: "Ahmed Esmail",
-  first_title: "About",
-  secend_title: "Turn visions into Exceptional aspirations",
-  tird_title:
-    "i am frontend developer passionate about my work is like an artist painting a masterpiece with code. Their love for the craft drives them to create visually stunning and user-friendly interfaces that captivate and delight users. What sets me apart is my unwavering dedication to continuous learning, always seeking new technologies and techniques to stay ahead in the ever-evolving world of web development.",
-};
-export const about_Ar = {
-  name: " أحمد إسماعيل ",
-  first_title: " بشأنى ",
-  secend_title: " تحويل الرؤى الى تطلعات استثنائية ",
-  tird_title:
-    "أنا مطور واجهة أمامية شغوف بعملي مثل فنان يرسم تحفة فنية باستخدام الكود. يدفعهم حبهم للحرفة إلى إنشاء واجهات مذهلة بصريًا وسهلة الاستخدام تأسر المستخدمين وتسعدهم. ما يميزني هو تفاني الذي لا يتزعزع في التعلم المستمر، والبحث دائمًا عن تقنيات وتقنيات جديدة للبقاء في المقدمة في عالم تطوير الويب المتطور باستمرار.",
-};
-
-export const skill_titles = {
-  ar_title: " مهاراتى ",
-  ar_secend_title: " جميع مهاراتى التى أستخدمها ",
-  en_secend_title: " All my skills that I use  ",
-  en_title: "my skills",
-};
-export const work_titles = {
-  ar_title: " أعمالى ",
-  ar_secend_title: " مشاريع قمت ببنائها ",
-  en_secend_title: " Projects I have done  ",
-  en_title: "My projects  ",
-};
-
-export const skills_ar = [
-  {
-    icon: "icons/next.png",
-    title: "Next-js",
-    desc: " أحدث إطارات العمل المبنية على react والصديقة لمحركات البحث ",
-    bg_color: "rgb(233, 30, 99)",
-  },
-
-  {
-    icon: "icons/php.png",
-    title: " PHP ",
-    desc: " اللفة الأساسية المستخدمة فى بناء إطار العمل Laravel ",
-    bg_color: "rgb(63, 81, 181)",
-  },
-  {
-    icon: "icons/laravel.png",
-    title: " Laravel ",
-    desc: "أحد أشهر إطارات العمل المستخدمة فى بناء نظام الواجهة الخلفية",
-    bg_color: "rgb(233, 30, 99)",
-  },
-  {
-    icon: "icons/physics.png",
-    title: "React",
-    desc: "   إطار العمل الذى اعتمد علية فى بناء مشاريعى ",
-    bg_color: "rgb(63, 81, 181)",
-  },
-  {
-    icon: "icons/typescript.png",
-    title: "TS",
-    desc: " جعل لغة ال JS أكثر تكاملا ",
-    bg_color: "rgb(63, 81, 181)",
-  },
-  {
-    icon: "icons/sql.png",
-    title: "  MySQL ",
-    desc: "قاعدة البيانات التى اعتمد عليها فى بناء مشاريع الواجهة الخلفية  ",
-    bg_color: "rgb(63, 81, 181)",
-  },
-  {
-    icon: "icons/Tailwind CSS.png",
-    title: "Tailwind CSS ",
-    desc: "  مكتبة خاصة بلغة css تسهل عملية بناء المنصة ولكن مع اعطاء حريات اكثر ",
-    bg_color: "rgb(255, 152, 0)",
-  },
-  {
-    icon: "icons/js.png",
-    title: "JS",
-    desc: " إضافة التفاعلات بين المستخدم والمنصة وبناء الأفكار الخاصة وتطبيقها   ",
-    bg_color: "rgb(255, 152, 0)",
-  },
-  {
-    icon: "icons/html-5.png",
-    title: "HTML",
-    desc: " بناء الهيكل العظمى الخاص بالموقع ",
-    bg_color: "rgb(233, 30, 99)",
-  },
-  {
-    icon: "icons/css-3.png",
-    title: "CSS",
-    desc: " تنسيق الهيكل العظمى واضافة جماليات الجسد المرئى  ",
-    bg_color: "rgb(63, 81, 181)",
-  },
-
-  {
-    icon: "icons/media.png",
-    title: "Bootstrap",
-    desc: "  مكتبة خاصة بلغة CSS تسهل عملية بناء المنصة  ",
-    bg_color: "rgb(233, 30, 99)",
-  },
-
-  {
-    icon: "icons/social.png",
-    title: "Git  ",
-    desc: " العمل على المشاريع الكبيرة مع الفرق باريحية   ",
-    bg_color: "rgb(63, 81, 181)",
-  },
-  {
-    icon: "icons/command-line.png",
-    title: "command line  ",
-    desc: " القدرة على استخدام اوامر Commend line  ",
-    bg_color: "rgb(233, 30, 99)",
-  },
-  {
-    icon: "icons/github.png",
-    title: "GitHup  ",
-    desc: "  القدرة على التعامل مع المشروع وملفات المشروع بطريقة سحابية ",
-    bg_color: "rgb(255, 152, 0)",
-  },
-  {
-    icon: "icons/browser.png",
-    title: "Use API  ",
-    desc: "  القدرة على التعامل مع APIS وإستخدامها لعرض البيانات الت توفرها  ",
-    bg_color: "rgb(63, 81, 181)",
-  },
-  {
-    icon: "icons/backend.png",
-    title: "Deal with backend  ",
-    desc: "  التعامل مع مطور الواجهة الخلفية لإنهاء المشروع بطريقة مثالية   ",
-    bg_color: "rgb(233, 30, 99)",
-  },
-];
-export const skills_en = [
-  {
-    icon: "icons/next.png",
-    title: "Next-js",
-    desc: " The latest react-based, SEO-friendly frameworks ",
-    bg_color: "rgb(233, 30, 99)",
-  },
-  {
-    icon: "icons/php.png",
-    title: " PHP ",
-    desc: "  The primary language used to build the Laravel framework    ",
-    bg_color: "rgb(63, 81, 181)",
-  },
-  {
-    icon: "icons/laravel.png",
-    title: " Laravel ",
-    desc: "One of the most popular frameworks used in building the backend.",
-    bg_color: "rgb(233, 30, 99)",
-  },
-  {
-    icon: "icons/physics.png",
-    title: "React",
-    desc: "   The framework through which players build projects    ",
-    bg_color: "rgb(63, 81, 181)",
-  },
-  {
-    icon: "icons/typescript.png",
-    title: "TS",
-    desc: " Make the JS language more integrated    ",
-    bg_color: "rgb(63, 81, 181)",
-  },
-  {
-    icon: "icons/sql.png",
-    title: "  MySQL ",
-    desc: "The database that I relied on to build back-end projects. ",
-    bg_color: "rgb(63, 81, 181)",
-  },
-  {
-    icon: "icons/Tailwind CSS.png",
-    title: "Tailwind CSS ",
-    desc: "  A special library for the CSS language that facilitates the process of building the platform, but while giving more freedoms    ",
-    bg_color: "rgb(255, 152, 0)",
-  },
-  {
-    icon: "icons/js.png",
-    title: "JS",
-    desc: " Adding interactions between the user and the platform and building and implementing own ideas    ",
-    bg_color: "rgb(255, 152, 0)",
-  },
-  {
-    icon: "icons/html-5.png",
-    title: "HTML",
-    desc: " Building your site's skeleton ",
-    bg_color: "rgb(233, 30, 99)",
-  },
-  {
-    icon: "icons/css-3.png",
-    title: "CSS",
-    desc: " Coordinating the skeleton and adding aesthetics to the visual body    ",
-    bg_color: "rgb(63, 81, 181)",
-  },
-
-  {
-    icon: "icons/media.png",
-    title: "Bootstrap",
-    desc: "  A special library for the CSS language that facilitates the process of building the platform    ",
-    bg_color: "rgb(233, 30, 99)",
-  },
-
-  {
-    icon: "icons/social.png",
-    title: "Git  ",
-    desc: " Work on large projects with teams comfortably    ",
-    bg_color: "rgb(63, 81, 181)",
-  },
-  {
-    icon: "icons/command-line.png",
-    title: "command line  ",
-    desc: " Ability to use Commend line commands    ",
-    bg_color: "rgb(233, 30, 99)",
-  },
-  {
-    icon: "icons/github.png",
-    title: "GitHup  ",
-    desc: "  Ability to handle project and project files in a cloud-based manner    ",
-    bg_color: "rgb(255, 152, 0)",
-  },
-  {
-    icon: "icons/browser.png",
-    title: "Use API  ",
-    desc: "  The ability to deal with APIS and use them to display the data they provide    ",
-    bg_color: "rgb(63, 81, 181)",
-  },
-  {
-    icon: "icons/backend.png",
-    title: "Deal with backend  ",
-    desc: "  Dealing with the backend developer to finish the project in a perfect way    ",
-    bg_color: "rgb(233, 30, 99)",
   },
 ];
 
@@ -369,11 +108,184 @@ export const projects_details_en = [
   },
 ];
 
-export const education = {
-  ar: " خريج كلية الأداب بجامعة الزقازيق الموجودة فى مصر ",
-  en: "Graduate of the Faculty of Arts at Zagazig University in Egypt  ",
-  title_ar: " المؤهل   ",
-  title_en: " Qualification",
-  secend_title_ar: " المؤهل الدراسى  ",
-  secend_title_en: "Educational Qualification",
+export const directionMap: Record<string, "ltr" | "rtl"> = {
+  en: "ltr",
+  ar: "rtl",
 };
+
+export const skills = [
+  {
+    icon: "/icons/next.png",
+    title: { ar: "Next-js", en: "Next-js" },
+    desc: {
+      ar: "أتقن أحدث إطارات العمل المبنية على React والصديقة لمحركات البحث.",
+      en: "Mastered the latest React-based framework for building SEO-friendly, performant web applications.",
+    },
+    bg_color: "rgb(233, 30, 99)",
+  },
+  {
+    icon: "/icons/php.png",
+    title: { ar: "PHP", en: "PHP" },
+    desc: {
+      ar: "خبير في PHP، اللغة الأساسية لتطوير الواجهة الخلفية، وخاصة مع Laravel.",
+      en: "Expert in PHP, the foundational language for backend development, especially with Laravel.",
+    },
+    bg_color: "rgb(63, 81, 181)",
+  },
+  {
+    icon: "/icons/laravel.png",
+    title: { ar: "Laravel", en: "Laravel" },
+    desc: {
+      ar: "متمكن من Laravel، أحد أشهر إطارات العمل القوية للواجهة الخلفية.",
+      en: "Highly proficient in Laravel, one of the most popular and powerful PHP backend frameworks.",
+    },
+    bg_color: "rgb(233, 30, 99)",
+  },
+  {
+    icon: "/icons/physics.png",
+    title: { ar: "React", en: "React" },
+    desc: {
+      ar: "مهارات قوية في React، الإطار الأساسي لبناء تطبيقات واجهة أمامية ديناميكية.",
+      en: "Strong skills in React, the core framework used for building dynamic and responsive frontend applications.",
+    },
+    bg_color: "rgb(63, 81, 181)",
+  },
+  {
+    icon: "/icons/typescript.png",
+    title: { ar: "TS", en: "TS" },
+    desc: {
+      ar: "بارع في TypeScript لكتابة جافاسكريبت أكثر قوة وقابلة للصيانة.",
+      en: "Skilled in TypeScript to write more robust and maintainable JavaScript code with static typing.",
+    },
+    bg_color: "rgb(63, 81, 181)",
+  },
+  {
+    icon: "/icons/sql.png",
+    title: { ar: "MySQL", en: "MySQL" },
+    desc: {
+      ar: "خبرة في تصميم وإدارة قواعد بيانات MySQL للمشاريع الخلفية.",
+      en: "Experienced in designing and managing relational databases using MySQL for backend projects.",
+    },
+    bg_color: "rgb(63, 81, 181)",
+  },
+  {
+    icon: "/icons/Tailwind CSS.png",
+    title: { ar: "Tailwind CSS", en: "Tailwind CSS" },
+    desc: {
+      ar: "متمكن من Tailwind CSS لتصميم واجهات مستخدم سريعة وقابلة للتخصيص.",
+      en: "Proficient with Tailwind CSS for rapid and customizable UI design with utility-first classes.",
+    },
+    bg_color: "rgb(255, 152, 0)",
+  },
+  {
+    icon: "/icons/js.png",
+    title: { ar: "JS", en: "JS" },
+    desc: {
+      ar: "خبرة واسعة في JavaScript لإنشاء تجارب ويب تفاعلية وسهلة الاستخدام.",
+      en: "Expertise in JavaScript to create interactive and user-friendly web experiences.",
+    },
+    bg_color: "rgb(255, 152, 0)",
+  },
+
+  {
+    icon: "/icons/social.png",
+    title: { ar: "Git", en: "Git" },
+    desc: {
+      ar: "متمكن من Git لإدارة النسخ البرمجية والتعاون الفعال في المشاريع.",
+      en: "Proficient in Git version control to manage codebases and collaborate effectively.",
+    },
+    bg_color: "rgb(63, 81, 181)",
+  },
+  {
+    icon: "/icons/command-line.png",
+    title: { ar: "Command Line", en: "Command Line" },
+    desc: {
+      ar: "مرتبط باستخدام أدوات سطر الأوامر لتحسين سير العمل وأتمتة المهام.",
+      en: "Comfortable using command line tools to improve workflow and automate tasks.",
+    },
+    bg_color: "rgb(233, 30, 99)",
+  },
+  {
+    icon: "/icons/github.png",
+    title: { ar: "GitHub", en: "GitHub" },
+    desc: {
+      ar: "خبرة في GitHub لاستضافة الأكواد وإدارة المشاريع والتعاون.",
+      en: "Experienced with GitHub for code hosting, collaboration, and project management.",
+    },
+    bg_color: "rgb(255, 152, 0)",
+  },
+  {
+    icon: "/icons/browser.png",
+    title: { ar: "Use API", en: "Use API" },
+    desc: {
+      ar: "مهارة في دمج واستهلاك واجهات برمجة التطبيقات لعرض البيانات الديناميكية.",
+      en: "Skilled in integrating and consuming APIs to fetch and display dynamic data efficiently.",
+    },
+    bg_color: "rgb(63, 81, 181)",
+  },
+  {
+    icon: "/icons/backend.png",
+    title: { ar: "Deal with backend", en: "Deal with backend" },
+    desc: {
+      ar: "القدرة على التعاون الفعال مع مطوري الواجهة الخلفية لتسليم حلول متكاملة.",
+      en: "Able to collaborate effectively with backend developers to deliver integrated solutions.",
+    },
+    bg_color: "rgb(233, 30, 99)",
+  },
+
+  // المهارات الجديدة:
+  {
+    icon: "/icons/tan-stack.png",
+    title: { ar: "TanStack Query", en: "TanStack Query" },
+    desc: {
+      ar: "خبير في إدارة حالة الخادم وجلب البيانات غير المتزامنة باستخدام TanStack Query في React.",
+      en: "Expert in managing server state and asynchronous data fetching with TanStack Query for React.",
+    },
+    bg_color: "rgb(30, 136, 229)",
+  },
+  {
+    icon: "/icons/zustand.jpg",
+    title: { ar: "zustand", en: "zustand" },
+    desc: {
+      ar: "متمكن في zustand لإدارة الحالة العامة البسيطة والقابلة للتوسع في تطبيقات React.",
+      en: "Skilled in zustand for simple and scalable global state management in React applications.",
+    },
+    bg_color: "rgb(0, 150, 136)",
+  },
+  {
+    icon: "/icons/reduc-toolkit.png",
+    title: { ar: "redux-toolkit", en: "redux-toolkit" },
+    desc: {
+      ar: "بارع في redux-toolkit لإدارة الحالة بطريقة فعالة وموحدة في Redux.",
+      en: "Proficient in redux-toolkit for efficient and standardized Redux state management.",
+    },
+    bg_color: "rgb(244, 66, 54)",
+  },
+  {
+    icon: "/icons/html-5.png",
+    title: { ar: "HTML", en: "HTML" },
+    desc: {
+      ar: "معرفة قوية بـ HTML لبناء هيكل صفحات ويب معنوي وسهل الوصول.",
+      en: "Strong knowledge of HTML for building semantic and accessible web page structures.",
+    },
+    bg_color: "rgb(233, 30, 99)",
+  },
+  {
+    icon: "/icons/css-3.png",
+    title: { ar: "CSS", en: "CSS" },
+    desc: {
+      ar: "مهارات متقدمة في CSS لتنسيق وتحسين مظهر واجهات الويب.",
+      en: "Skilled in CSS for styling and enhancing the visual appearance of web interfaces.",
+    },
+    bg_color: "rgb(63, 81, 181)",
+  },
+  {
+    icon: "/icons/media.png",
+    title: { ar: "Bootstrap", en: "Bootstrap" },
+    desc: {
+      ar: "خبرة في Bootstrap لتصميم سريع ومتجاوب باستخدام إطار عمل CSS شامل.",
+      en: "Experienced in Bootstrap for fast, responsive design with a comprehensive CSS framework.",
+    },
+    bg_color: "rgb(233, 30, 99)",
+  },
+];

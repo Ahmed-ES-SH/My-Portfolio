@@ -1,3 +1,4 @@
+"use client";
 import { useParams } from "next/navigation";
 import {
   createContext,
@@ -9,7 +10,7 @@ import {
 
 interface VariablesType {
   width: number;
-  locale: string;
+  locale: "en" | "ar";
 }
 
 interface props {
@@ -20,7 +21,7 @@ const Variables = createContext<VariablesType | null>(null);
 
 export default function VariablesProvider({ children }: props) {
   const params = useParams();
-  const locale = params?.locale as string;
+  const locale = params?.locale as "en" | "ar";
   const [width, setWidth] = useState(0);
 
   useEffect(() => {

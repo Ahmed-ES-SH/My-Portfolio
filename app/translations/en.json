@@ -1,1 +1,73 @@
-{}
+{
+  "mainLayout": {
+    "title": "Ahmed Ismail - Full Stack Developer",
+    "description": "Welcome to my personal portfolio where I showcase my projects and skills in Laravel and Next.js"
+  },
+
+  "projectsMeta": {
+    "title": "Ahmed Ismail | My Projects",
+    "description": "Explore a collection of professional web projects featuring modern UI/UX designs, advanced functionalities, and scalable architectures using technologies like Next.js, Laravel, and more."
+  },
+
+  "skillsMeta": {
+    "title": "Ahmed Ismail | My Skills",
+    "description": "Explore the technical skills and tools I master — including modern web development frameworks, backend technologies, state management, and UI design systems. A solid foundation for building scalable, high-performance applications."
+  },
+
+  "aboutMeta": {
+    "title": "Ahmed Ismail | About",
+    "description": "Learn more about Ahmed Ismail — a passionate full-stack web developer with a strong background in building modern web applications using Next.js, Laravel, and other powerful tools. Discover his journey"
+  },
+
+  "contactMe": "Contact Me",
+  "heroSection": {
+    "bestQuality": "Best Quality",
+    "responsiveDesign": "Responsive Design",
+    "AnimateText": {
+      "typeAnimation": [
+        "<Front-end Web Developer />",
+        "<Back-end Web Developer />",
+        "<Full-Stack Web Developer />"
+      ],
+      "greeting": "Hi , i'm",
+      "name": "Ahmed Ismail",
+      "part1": "A Passionate",
+      "part2": "creating User Friendly Websites"
+    }
+  },
+
+  "education": {
+    "education": "Graduate of the Faculty of Arts at Zagazig University in Egypt",
+    "title": "Qualification",
+    "second_title": "Educational Qualification"
+  },
+
+  "aboutme": {
+    "name": "Ahmed Ismail",
+    "first_title": "About",
+    "second_title": "Turn visions into Exceptional aspirations",
+    "third_title": "I am a full stack developer passionate about building complete web solutions using modern frameworks like Next.js and Laravel. I blend creativity with technical expertise to craft both elegant frontends and powerful backends. What sets me apart is my commitment to continuous learning and staying updated with the latest tools and technologies in the ever-evolving world of web development."
+  },
+
+  "aboutBtns": {
+    "contact_me": "Contact Me",
+    "download_cv": "Download CV"
+  },
+
+  "skillsPage": {
+    "title": "my skills",
+    "secend_title": "All my skills that I use"
+  },
+
+  "projects": {
+    "title": "My projects",
+    "second_title": "Projects I have done"
+  },
+
+  "projectCard": {
+    "technologiesUsed": "Technologies Used",
+    "sourceCode": "Source Code",
+    "liveDemo": "Live Demo",
+    "privateRepo": "Private Repo"
+  }
+}

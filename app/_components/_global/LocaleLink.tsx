@@ -7,17 +7,19 @@ interface LocaleLinkProps {
   children: ReactNode;
   className?: string;
   href: string;
+  target?: string;
 }
 
 export default function LocaleLink({
   children,
   className,
   href,
+  target,
 }: LocaleLinkProps) {
   const { locale } = useVariables();
   const formattedHref = `/${locale}/${href}`.replace(/\/+/g, "/");
   return (
-    <Link href={formattedHref} className={className}>
+    <Link target={target} href={formattedHref} className={className}>
       {children}
     </Link>
   );

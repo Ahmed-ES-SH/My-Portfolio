@@ -1,13 +1,16 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import Particles from "@tsparticles/react";
 import { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import type { Container, Engine } from "@tsparticles/engine";
+import { usePathname } from "next/navigation";
 
-const AnimateBackGround = () => {
+export default function AnimateBackGround() {
   const [init, setInit] = useState(false);
+  const pathName = usePathname();
+  const segments = pathName.split("/").filter(Boolean);
+  const cleanedPath = "/" + segments.slice(1).join("/");
 
   useEffect(() => {
     initParticlesEngine(async (engine: Engine) => {
@@ -23,6 +26,8 @@ const AnimateBackGround = () => {
     console.log(container);
   };
 
+  if (cleanedPath == "/projects") return null;
+
   return (
     <div
       style={{
@@ -31,7 +36,7 @@ const AnimateBackGround = () => {
         top: "0px",
         width: "100%",
         height: "100vh",
-        zIndex: -1,
+        zIndex: 5,
       }}
     >
       {init && (
@@ -96,7 +101,7 @@ const AnimateBackGround = () => {
                   width: 800,
                 },
 
-                value: 80,
+                value: 20,
               },
               opacity: {
                 value: 0.8,
@@ -114,6 +119,4 @@ const AnimateBackGround = () => {
       )}
     </div>
   );
-};
-
-export default AnimateBackGround;
+}
