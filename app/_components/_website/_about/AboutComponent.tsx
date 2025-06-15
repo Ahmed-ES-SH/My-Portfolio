@@ -157,13 +157,19 @@ console.log(createAwesome());`}</code>
                   </a>
                   <FaArrowRight className="rtl:rotate-180" />
                 </motion.button>
-                <motion.button
-                  className="border whitespace-nowrap border-gray-600 max-md:w-full hover:border-blue-400 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-                  whileHover={{ scale: 1.05, borderColor: "#00a5f4" }}
-                  whileTap={{ scale: 0.95 }}
+                <a
+                  href="/Ahmed-Ismail-Resume.pdf"
+                  download
+                  type="application/pdf"
                 >
-                  {aboutBtns.download_cv}
-                </motion.button>
+                  <motion.button
+                    className="border whitespace-nowrap border-gray-600 max-md:w-full hover:border-blue-400 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300"
+                    whileHover={{ scale: 1.05, borderColor: "#00a5f4" }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {aboutBtns.download_cv}
+                  </motion.button>
+                </a>
               </motion.div>
             </div>
             <Aboutme />
