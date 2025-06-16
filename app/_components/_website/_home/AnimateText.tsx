@@ -34,7 +34,7 @@ export default function AnimateText() {
   return (
     <motion.div
       dir={directionMap[locale]}
-      className="content max-md:w-full  relative z-[5]  p-4 max-lg:w-full flex-1"
+      className="content max-md:w-full  relative z-[5] p-4 max-lg:w-full flex-1"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -76,7 +76,7 @@ export default function AnimateText() {
           wrapper="span"
           speed={50}
           repeat={Infinity}
-          className={`text-[40px] text-green-400 max-md:text-[32px] max-sm:text-[24px] font-bold inline-block z-[99] relative ${
+          className={`text-[40px] text-green-400 max-md:text-[32px] max-sm:text-[20px]  font-bold inline-block z-[99] relative ${
             isArabic ? "font-cairo" : "font-inter"
           }`}
         />

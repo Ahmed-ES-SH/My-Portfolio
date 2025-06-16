@@ -15,11 +15,11 @@ export const getSharedMetadata = (locale: "en" | "ar", translations: any) => ({
   openGraph: {
     title: translations.title,
     description: translations.description,
-    url: `https://www.myportfolio.com/${locale}`,
+    url: `https://ahmedismail.vercel.app/en/${locale}`,
     siteName: "My Portfolio",
     images: [
       {
-        url: "https://www.myportfolio.com/images/og-image.jpg",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt:
@@ -34,6 +34,6 @@ export const getSharedMetadata = (locale: "en" | "ar", translations: any) => ({
     card: "summary_large_image",
     title: translations.title,
     description: translations.description,
-    image: "https://www.myportfolio.com/images/twitter-image.jpg",
+    image: "/logo.png",
   },
 });

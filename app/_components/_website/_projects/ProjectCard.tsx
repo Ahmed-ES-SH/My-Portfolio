@@ -72,39 +72,31 @@ const ProjectLinks: React.FC<ProjectLinksProps> = ({
 }) => {
   return (
     <div className="flex max-md:flex-col  gap-4">
-      <motion.button
+      <motion.a
+        target="_blank"
+        href={sourceCodeLink}
         rel="noopener noreferrer"
-        className={`flex items-center gap-2 px-6 py-3 ${
+        className={`flex items-center gap-3 px-6 py-3 ${
           isPrivate ? "bg-red-500" : "bg-gray-900"
-        } text-white rounded-lg font-medium hover:scale-110 duration-300 shadow-lg`}
+        } text-white rounded-lg font-medium hover:scale-[105%] duration-300 shadow-lg`}
       >
-        <a
-          className="flex items-center gap-3"
-          target="_blank"
-          href={sourceCodeLink}
-        >
-          {isPrivate ? (
-            <FaLock className="text-sm" />
-          ) : (
-            <FaGithub className="text-sm" />
-          )}
-          {isPrivate ? projectCard.privateRepo : projectCard.sourceCode}
-        </a>
-      </motion.button>
+        {isPrivate ? (
+          <FaLock className="text-sm" />
+        ) : (
+          <FaGithub className="text-sm" />
+        )}
+        {isPrivate ? projectCard.privateRepo : projectCard.sourceCode}
+      </motion.a>
 
-      <motion.button
+      <motion.a
+        href={projectLink}
+        target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-medium hover:scale-110 duration-300 shadow-lg"
+        className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-medium hover:scale-[105%] duration-300 shadow-lg"
       >
-        <a
-          className="flex items-center gap-3"
-          href={projectLink}
-          target="_blank"
-        >
-          <FaExternalLinkAlt className="text-sm" />
-          {projectCard.liveDemo}
-        </a>
-      </motion.button>
+        <FaExternalLinkAlt className="text-sm" />
+        {projectCard.liveDemo}
+      </motion.a>
     </div>
   );
 };

@@ -33,13 +33,13 @@ export default function HeroSection() {
         variants={itemVariants}
         initial="hidden"
         animate="visible"
-        className={`z-[10] absolute max-md:bottom-12  max-lg:-bottom-2 bottom-2 ${
+        className={`z-[2] absolute max-md:bottom-12  max-lg:-bottom-2 bottom-2 ${
           isArabic ? "lg:left-12 left-0" : "right-0 2xl:right-[228px]"
         }`}
       >
         <Img
           src="/robot.png"
-          className="w-[320px] max-lg:w-[350px] max-md:w-[150px] 2xl:w-[500px] "
+          className="w-[320px] max-lg:w-[350px] max-md:w-[150px] max-sm:w-[] 2xl:w-[500px]"
         />
       </motion.div>
     </div>

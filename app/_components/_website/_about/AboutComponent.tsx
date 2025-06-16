@@ -142,11 +142,7 @@ console.log(createAwesome());`}</code>
                 animate={{ opacity: 1, y: 0 }}
               >
                 <motion.button
-                  className="bg-blue-500 whitespace-nowrap   hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 justify-center max-md:w-full  transition-all duration-300"
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 10px 30px rgba(0, 165, 244, 0.3)",
-                  }}
+                  className="bg-blue-500 whitespace-nowrap   hover:bg-blue-600 hover:scale-110 hover:shadow-primary-color shadow-md text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 justify-center max-md:w-full  transition-all duration-300"
                   whileTap={{ scale: 0.95 }}
                 >
                   <a
@@ -161,12 +157,9 @@ console.log(createAwesome());`}</code>
                   href="/Ahmed-Ismail-Resume.pdf"
                   download
                   type="application/pdf"
+                  className="max-md:w-full block border border-gray-600  hover:border-primary-color hover:scale-110 transition-all duration-300 rounded-lg "
                 >
-                  <motion.button
-                    className="border whitespace-nowrap border-gray-600 max-md:w-full hover:border-blue-400 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-                    whileHover={{ scale: 1.05, borderColor: "#00a5f4" }}
-                    whileTap={{ scale: 0.95 }}
-                  >
+                  <motion.button className=" whitespace-nowrap max-md:w-full block  text-white px-8 py-3  font-semibold ">
                     {aboutBtns.download_cv}
                   </motion.button>
                 </a>

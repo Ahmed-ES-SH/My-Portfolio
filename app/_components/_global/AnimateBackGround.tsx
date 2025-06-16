@@ -26,7 +26,9 @@ export default function AnimateBackGround() {
     console.log(container);
   };
 
-  if (cleanedPath == "/projects") return null;
+  console.log(cleanedPath);
+
+  // if (cleanedPath == "/projects") return null;
 
   return (
     <div
