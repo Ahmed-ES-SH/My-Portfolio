@@ -22,7 +22,7 @@ export const useProjectsData = () => {
   const [flixtvImages, setFlixtvImages] = useState<string[]>([]);
   const [machicImages, setMachicImages] = useState<string[]>([]);
   const [madadImages, setMadadImages] = useState<string[]>([]);
-  const [aramImages, setAramImages] = useState<string[]>([]);
+  // const [aramImages, setAramImages] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
   const folders = [
@@ -30,7 +30,7 @@ export const useProjectsData = () => {
     { name: "flix-tv", setData: setFlixtvImages },
     { name: "machic", setData: setMachicImages },
     { name: "madad", setData: setMadadImages },
-    { name: "aram", setData: setAramImages },
+    // { name: "aram", setData: setAramImages },
   ];
 
   useEffect(() => {
