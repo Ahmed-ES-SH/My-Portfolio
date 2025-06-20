@@ -124,29 +124,29 @@ export const useProjectsData = () => {
       projectLink: "https://madad-rust.vercel.app",
       isPrivate: false,
     },
-    {
-      folderName: "aram",
-      title: {
-        en: "Aram Gulf",
-        ar: "شركة آرام الخليج المحدودة",
-      },
-      description: {
-        en: "Aram Gulf is a feature-rich web platform designed for managing service centers. It includes a powerful booking system, real-time chat, integrated payment processing, and a dynamic admin dashboard with detailed statistics. Service centers have full control over their schedules, can accept or reject bookings, and track their earnings through a built-in withdrawal system. The platform also supports real-time notifications and offers a fully customizable interface. Note: If some content appears missing in certain sections, it is due to incomplete input from the owner — not a flaw in the code or system.",
-        ar: "شركة آرام الخليج المحدودة هي منصة إلكترونية متكاملة وغنية بالميزات، مصممة خصيصًا لإدارة مراكز الخدمات. تشمل المنصة نظام حجوزات احترافي، ومحادثات فورية، ونظام دفع إلكتروني، بالإضافة إلى لوحة تحكم ديناميكية تحتوي على إحصائيات تفصيلية. تتيح للمراكز التحكم الكامل في جدول العمل، مع إمكانية قبول أو رفض الحجوزات، ومتابعة الأرباح من خلال نظام سحب مدمج. كما تدعم المنصة نظام إشعارات فورية وواجهة قابلة للتخصيص بشكل كامل. ملاحظة: في حال وجود نقص في بعض أقسام المحتوى، فإن ذلك يعود إلى عدم توفير البيانات من قِبل المالك، وليس إلى خلل في الكود أو المشروع.",
-      },
-      images: aramImages,
-      skills: [
-        "Laravel",
-        "PHP",
-        "Next.js",
-        "TailwindCSS",
-        "Real-time Features",
-        "Responsive Design",
-      ],
-      linkSourceCode: "",
-      projectLink: "https://aram-gulf.com",
-      isPrivate: true,
-    },
+    // {
+    //   folderName: "aram",
+    //   title: {
+    //     en: "Aram Gulf",
+    //     ar: "شركة آرام الخليج المحدودة",
+    //   },
+    //   description: {
+    //     en: "Aram Gulf is a feature-rich web platform designed for managing service centers. It includes a powerful booking system, real-time chat, integrated payment processing, and a dynamic admin dashboard with detailed statistics. Service centers have full control over their schedules, can accept or reject bookings, and track their earnings through a built-in withdrawal system. The platform also supports real-time notifications and offers a fully customizable interface. Note: If some content appears missing in certain sections, it is due to incomplete input from the owner — not a flaw in the code or system.",
+    //     ar: "شركة آرام الخليج المحدودة هي منصة إلكترونية متكاملة وغنية بالميزات، مصممة خصيصًا لإدارة مراكز الخدمات. تشمل المنصة نظام حجوزات احترافي، ومحادثات فورية، ونظام دفع إلكتروني، بالإضافة إلى لوحة تحكم ديناميكية تحتوي على إحصائيات تفصيلية. تتيح للمراكز التحكم الكامل في جدول العمل، مع إمكانية قبول أو رفض الحجوزات، ومتابعة الأرباح من خلال نظام سحب مدمج. كما تدعم المنصة نظام إشعارات فورية وواجهة قابلة للتخصيص بشكل كامل. ملاحظة: في حال وجود نقص في بعض أقسام المحتوى، فإن ذلك يعود إلى عدم توفير البيانات من قِبل المالك، وليس إلى خلل في الكود أو المشروع.",
+    //   },
+    //   images: aramImages,
+    //   skills: [
+    //     "Laravel",
+    //     "PHP",
+    //     "Next.js",
+    //     "TailwindCSS",
+    //     "Real-time Features",
+    //     "Responsive Design",
+    //   ],
+    //   linkSourceCode: "",
+    //   projectLink: "https://aram-gulf.com",
+    //   isPrivate: true,
+    // },
     {
       folderName: "borsan",
       title: {
