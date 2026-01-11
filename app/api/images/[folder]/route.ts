@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function GET(req: any, context: any) {
-  const { folder } = context.params;
+  const { folder } = await context.params;
 
   const folderPath = path.join(process.cwd(), "public", "Projects", folder);
 

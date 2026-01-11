@@ -1,11 +1,9 @@
-import React from "react";
 import { getSharedMetadata } from "@/app/helpers/getSharedMetadata ";
 import { getTranslations } from "@/app/helpers/helpers";
-import ProjectsPageWrapper from "@/app/_components/_website/_projects/ProjectsPageWrapper";
+import ProjectsPage from "@/app/_components/_website/_projects/ProjectsPage";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const generateMetadata = async ({ params }: any) => {
-  const locale = params.locale;
+  const { locale } = await params;
   const translations = getTranslations(locale);
   const sharedMetadata = getSharedMetadata(locale, translations);
   return {
@@ -15,6 +13,6 @@ export const generateMetadata = async ({ params }: any) => {
   };
 };
 
-export default function page() {
-  return <ProjectsPageWrapper />;
+export default function ProjectsPageWrapper() {
+  return <ProjectsPage />;
 }

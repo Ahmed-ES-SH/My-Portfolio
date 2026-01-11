@@ -5,7 +5,7 @@ import React from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const generateMetadata = async ({ params }: any) => {
-  const locale = params.locale;
+  const { locale } = await params;
   const translations = getTranslations(locale);
   const sharedMetadata = getSharedMetadata(locale, translations);
   return {

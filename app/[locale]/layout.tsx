@@ -4,7 +4,7 @@ import { getTranslations } from "../helpers/helpers";
 import { getSharedMetadata } from "../helpers/getSharedMetadata ";
 
 export const generateMetadata = async ({ params }: any) => {
-  const locale = params.locale;
+  const { locale } = await params;
   const translations = getTranslations(locale);
   const sharedMetadata = getSharedMetadata(locale, translations);
   return {

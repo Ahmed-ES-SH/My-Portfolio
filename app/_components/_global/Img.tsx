@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
-import React from "react";
 
 interface props {
   src: string;
@@ -28,7 +26,7 @@ export default function Img({
   return (
     <>
       <Image
-        src={src}
+        src={src ?? "/noImage.png"}
         alt={alt}
         className={className}
         width={width}
