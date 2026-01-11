@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, spring, useAnimation, useInView } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import Aboutme from "./Aboutme";
 import { useVariables } from "@/app/context/VariablesContext";
@@ -47,7 +47,7 @@ export default function AboutComponent() {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: spring,
         stiffness: 100,
       },
     },
@@ -100,7 +100,7 @@ export default function AboutComponent() {
                 variants={itemVariants}
               >
                 <motion.div
-                  className="relative z-10 bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700"
+                  className="relative z-10 bg-linear-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700"
                   whileHover={{ y: -10 }}
                   transition={{ type: "spring", stiffness: 100 }}
                 >
