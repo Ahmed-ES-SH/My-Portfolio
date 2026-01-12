@@ -1,7 +1,6 @@
-import SkillsComponent from "@/app/_components/_website/_skills/TimeLineSkills";
+import SkillsPageComponent from "@/app/_components/_website/_skills/SkillsPageComponent";
 import { getSharedMetadata } from "@/app/helpers/getSharedMetadata ";
 import { getTranslations } from "@/app/helpers/helpers";
-import React from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const generateMetadata = async ({ params }: any) => {
@@ -16,5 +15,5 @@ export const generateMetadata = async ({ params }: any) => {
 };
 
 export default function page() {
-  return <SkillsComponent />;
+  return <SkillsPageComponent />;
 }

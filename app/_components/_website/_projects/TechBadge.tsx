@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FaCode } from "react-icons/fa";
 
 // TechBadge Component
-export default function TechBadge({ tech, index }: TechBadgeProps) {
+export default function TechBadge({ tech, index, length }: TechBadgeProps) {
   return (
     <motion.div
       dir="ltr"
@@ -16,7 +16,7 @@ export default function TechBadge({ tech, index }: TechBadgeProps) {
       }}
       className="inline-flex items-center text-[12px] lg:text-sm gap-1.5 px-3 py-1.5 bg-linear-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full  font-medium text-blue-700"
     >
-      <FaCode className="text-xs" />
+      {index < length - 1 && <FaCode className="text-xs" />}
       {tech}
     </motion.div>
   );

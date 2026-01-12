@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { getTranslations } from "../helpers/helpers";
 import { getSharedMetadata } from "../helpers/getSharedMetadata ";
 

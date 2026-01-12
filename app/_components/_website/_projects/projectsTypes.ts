@@ -13,6 +13,7 @@ interface ProjectData {
 interface TechBadgeProps {
   tech: string;
   index: number;
+  length: number;
 }
 
 interface ProjectLinksProps {

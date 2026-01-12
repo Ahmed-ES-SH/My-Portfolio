@@ -1,7 +1,6 @@
 import AboutComponent from "@/app/_components/_website/_about/AboutComponent";
 import { getSharedMetadata } from "@/app/helpers/getSharedMetadata ";
 import { getTranslations } from "@/app/helpers/helpers";
-import React from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const generateMetadata = async ({ params }: any) => {

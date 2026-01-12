@@ -20,7 +20,7 @@ export default function Navbar() {
   const isArabic = locale == "ar";
   return (
     <div
-      className={`w-fit lg:top-1/2 lg:-translate-y-1/2 bottom-0 max-lg:w-full max-lg:left-0  max-lg:rounded-none  max-lg:bg-sky-500 fixed h-[300px] max-lg:h-fit  max-lg:flex-row gap-6  z-[999999999999] rounded-full  ${
+      className={`w-fit lg:top-1/2 lg:-translate-y-1/2 bottom-0 max-lg:w-full max-lg:left-0  max-lg:rounded-none  max-lg:bg-sky-500 fixed h-[300px] max-lg:h-fit  max-lg:flex-row gap-6  z-999999 rounded-full  ${
         isArabic ? "right-4" : "left-4"
       }   px-[10px] py-2  bg-primary-color hover:bg-sky-500 duration-200 cursor-pointer text-white/50 flex flex-col items-center justify-around`}
     >
@@ -39,7 +39,7 @@ export default function Navbar() {
             <p
               className={`max-lg:hidden absolute duration-200 opacity-0 group-hover:opacity-100 invisible group-hover:visible ${
                 isArabic ? "-left-[130px]" : "-right-[130px]"
-              } px-2 py-1 rounded-md bg-sky-500 text-center text-white whitespace-nowrap after:w-0 after:h-0  after:border-transparent after:border-[8px] ${
+              } px-2 py-1 rounded-md bg-sky-500 text-center text-white whitespace-nowrap after:w-0 after:h-0  after:border-transparent after:border-8px ${
                 isArabic ? "after:border-l-sky-600" : "after:border-r-sky-600"
               } after:content-[''] after:absolute ${
                 isArabic ? "after:-right-5" : "after:-left-5"

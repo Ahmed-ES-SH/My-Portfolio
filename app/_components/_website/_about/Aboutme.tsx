@@ -22,6 +22,7 @@ export default function Aboutme() {
       icon: <FaGithub className="size-6" />,
       bg_color: "hover:bg-[#333]",
       link: "https://github.com/Ahmed-ES-SH",
+      handle: undefined,
     },
     {
       icon: <FaTelegramPlane className="size-6" />,
@@ -31,7 +32,7 @@ export default function Aboutme() {
     {
       icon: <FaGoogle className="size-6" />,
       bg_color: "hover:bg-[#34a853]",
-      link: "mailto:ahmedshehata9889@gmail.com",
+      link: "mailto:ahmedismaildev6@gmail.com",
     },
   ];
 
@@ -49,15 +50,15 @@ export default function Aboutme() {
           animate={{ scale: 1 }}
           transition={{ type: "spring", stiffness: 100, delay: 0.3 }}
         >
-          <div className="overflow-hidden relative w-[220px] h-[220px] rounded-full bg-gradient-to-r from-transparent shadow-2xl shadow-sky-700 to-[#1f6e8c75] flex items-center justify-center flex-col">
+          <div className="overflow-hidden relative w-[220px] h-[220px] rounded-full bg-linear-to-r from-transparent shadow-2xl shadow-sky-700 to-[#1f6e8c75] flex items-center justify-center flex-col">
             <Img
-              src="/avater.webp"
+              src="/me.webp"
               className="w-full h-full rounded-full object-cover"
             />
           </div>
 
           <motion.div
-            className="mt-1 bg-gradient-to-r from-transparent to-[#1f6e8c75] w-[200px] rounded-md shadow-2xl shadow-sky-700 h-fit"
+            className="mt-1 bg-linear-to-r from-transparent to-[#1f6e8c75] w-[200px] rounded-md shadow-2xl shadow-sky-700 h-fit"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}

@@ -22,13 +22,10 @@ export default function AnimateBackGround() {
 
   const particlesLoaded = async (
     container: Container | undefined
-  ): Promise<void> => {
-    console.log(container);
-  };
+  ): Promise<void> => {};
 
-  console.log(cleanedPath);
-
-  // if (cleanedPath == "/projects") return null;
+  if (cleanedPath == "/skills" || cleanedPath.includes("/projects"))
+    return null;
 
   return (
     <div

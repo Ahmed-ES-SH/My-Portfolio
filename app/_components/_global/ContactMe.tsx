@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Img from "./Img";
 import LocaleLink from "./LocaleLink";
 import { useRouter } from "next/navigation";
-import { IoArrowDownOutline } from "react-icons/io5";
+import { IoArrowDownOutline, IoLogoWhatsapp, IoMail } from "react-icons/io5";
 import { useVariables } from "@/app/context/VariablesContext";
 import { getTranslations } from "@/app/helpers/helpers";
 
@@ -57,17 +57,25 @@ export default function ContactMe() {
     router.refresh();
   };
 
+  const handleGmailme = () => {
+    window.open("mailto:ahmedismaildev6@gmail.com");
+  };
+
+  const handleWhatsApp = () => {
+    window.open("https://wa.me/201017539419", "_blank");
+  };
+
   return (
-    <div className="c-container pt-6 z-[9999] flex justify-between items-center py-4 absolute top-3 left-1/2 -translate-x-1/2">
+    <div className="c-container pt-6 z-9999 flex justify-between items-center py-4 absolute top-3 left-1/2 -translate-x-1/2">
       <LocaleLink className="max-md:hidden outline-none" href="/">
         <Img src="/logo.png" className="w-32 object-contain" />
       </LocaleLink>
 
-      <div className="flex items-center w-fit bg-sky-400 rounded-md">
-        <div className="relative" ref={dropdownRef}>
+      <div className="flex items-center w-fit h-[50px] rounded-md">
+        <div className="relative h-full" ref={dropdownRef}>
           <div
             onClick={() => setIsOpen(!isOpen)}
-            className="flex items-center gap-2 px-3 py-2 bg-sky-500 hover:bg-sky-600 rounded-l-md cursor-pointer transition-colors duration-200"
+            className="flex items-center gap-2 px-3 h-full bg-sky-500 hover:bg-sky-600 rounded-l-md cursor-pointer transition-colors duration-200"
           >
             <p className="text-white font-medium">{selectedLanguage.label}</p>
             <IoArrowDownOutline
@@ -91,12 +99,20 @@ export default function ContactMe() {
             </div>
           )}
         </div>
-        <a
-          href="https://mostaql.com/u/ahmedve99/portfolio"
-          className="block hover:bg-sky-600 duration-300 outline-none border-none px-4 py-2 rounded-r-md text-white bg-sky-700"
+        <button
+          onClick={handleGmailme}
+          className="flex items-center gap-2 hover:bg-red-600 duration-300 outline-none border-none hover:scale hover:-translate-y-2 px-4 h-full text-white bg-red-500"
+          title="Gmail"
         >
-          {contactMe}
-        </a>
+          <IoMail className="text-lg" />
+        </button>
+        <button
+          onClick={handleWhatsApp}
+          className="flex items-center gap-2 hover:bg-green-600 duration-300 outline-none border-none hover:scale hover:-translate-y-2 px-4 h-full rounded-r-md text-white bg-green-500"
+          title="WhatsApp"
+        >
+          <IoLogoWhatsapp className="text-lg" />
+        </button>
       </div>
     </div>
   );

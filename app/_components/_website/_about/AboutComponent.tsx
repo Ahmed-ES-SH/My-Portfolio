@@ -1,11 +1,10 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, spring, useAnimation, useInView } from "framer-motion";
-import { FaArrowRight } from "react-icons/fa";
-import Aboutme from "./Aboutme";
 import { useVariables } from "@/app/context/VariablesContext";
 import { getTranslations } from "@/app/helpers/helpers";
 import { directionMap } from "@/app/constants/content";
+import Aboutme from "./Aboutme";
 
 export default function AboutComponent() {
   const { locale } = useVariables();
@@ -141,23 +140,11 @@ console.log(createAwesome());`}</code>
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                <motion.button
-                  className="bg-blue-500 whitespace-nowrap   hover:bg-blue-600 hover:scale-110 hover:shadow-primary-color shadow-md text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 justify-center max-md:w-full  transition-all duration-300"
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <a
-                    target="_blank"
-                    href="https://mostaql.com/u/ahmedve99/portfolio"
-                  >
-                    {aboutBtns.contact_me}
-                  </a>
-                  <FaArrowRight className="rtl:rotate-180" />
-                </motion.button>
                 <a
                   href="/Ahmed-Ismail-Resume.pdf"
                   download
                   type="application/pdf"
-                  className="max-md:w-full block border border-gray-600  hover:border-primary-color hover:scale-110 transition-all duration-300 rounded-lg "
+                  className="max-md:w-full bg-primary-color block border border-gray-600  hover:border-primary-color hover:scale-110 transition-all duration-300 rounded-lg "
                 >
                   <motion.button className=" whitespace-nowrap max-md:w-full block  text-white px-8 py-3  font-semibold ">
                     {aboutBtns.download_cv}
