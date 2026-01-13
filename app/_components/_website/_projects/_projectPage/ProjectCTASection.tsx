@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { useVariables } from "@/app/context/VariablesContext";
 import { getTranslations } from "@/app/helpers/helpers";
 import { FaExternalLinkAlt, FaGithub, FaLock } from "react-icons/fa";
+import { RiFilePaperFill } from "react-icons/ri";
+import { ProjectCTASectionProps } from "./projectTypes";
 
 export default function ProjectCTASection({ project }: ProjectCTASectionProps) {
   const { locale } = useVariables();
@@ -35,7 +37,7 @@ export default function ProjectCTASection({ project }: ProjectCTASectionProps) {
               href={project.projectLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-primary-color text-white font-semibold rounded-xl hover:bg-primary-color/80 transition-all shadow-lg shadow-primary-color/30"
+              className="flex-1 whitespace-nowrap flex items-center justify-center gap-2 px-6 py-3 bg-primary-color text-white font-semibold rounded-xl hover:bg-primary-color/80 transition-all shadow-lg shadow-primary-color/30"
             >
               <FaExternalLinkAlt />
               {projectCard.liveDemo}
@@ -43,7 +45,7 @@ export default function ProjectCTASection({ project }: ProjectCTASectionProps) {
 
             {/* Source Code */}
             {project.isPrivate ? (
-              <div className="flex items-center gap-2 px-6 py-3 bg-red-500/20 text-red-400 font-semibold rounded-xl border border-red-500/30">
+              <div className="flex-1 whitespace-nowrap flex items-center justify-center gap-2 px-6 py-3 bg-red-500/20 text-red-400 font-semibold rounded-xl border border-red-500/30">
                 <FaLock />
                 {locale == "ar" ? "كود خاص" : "Private Source"}
               </div>
@@ -52,10 +54,22 @@ export default function ProjectCTASection({ project }: ProjectCTASectionProps) {
                 href={project.linkSourceCode}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 bg-white/5 text-white font-semibold rounded-xl border border-white/10 hover:bg-white/10 transition-all"
+                className="flex-1 whitespace-nowrap flex items-center justify-center gap-2 px-6 py-3 bg-white/5 text-white font-semibold rounded-xl border border-white/10 hover:bg-white/10 transition-all"
               >
                 <FaGithub />
                 {projectCard.sourceCode}
+              </a>
+            )}
+
+            {project.linkDocs && (
+              <a
+                href={project.linkDocs}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 whitespace-nowrap flex items-center justify-center gap-2 px-6 py-3 bg-green-300/80 text-white font-semibold rounded-xl border border-white/10 hover:bg-green-300/50 transition-all"
+              >
+                <RiFilePaperFill />
+                {projectCard.docs}
               </a>
             )}
           </div>

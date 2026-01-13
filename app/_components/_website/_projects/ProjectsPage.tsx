@@ -2,9 +2,13 @@
 import { useEffect, useState } from "react";
 import { useVariables } from "@/app/context/VariablesContext";
 import { getTranslations } from "@/app/helpers/helpers";
-import { motion, AnimatePresence } from "framer-motion";
-import { useProjectsData, ProjectCategory } from "@/app/constants/projects";
-import { VscLoading } from "react-icons/vsc";
+import {
+  motion,
+  AnimatePresence,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
+import { Project, ProjectCategory } from "@/app/lib/projects";
 import { directionMap } from "@/app/constants/content";
 import ProjectCard from "@/app/_components/_website/_projects/ProjectCard";
 import { FaCode, FaServer, FaLayerGroup, FaRocket } from "react-icons/fa";
@@ -37,39 +41,39 @@ const filterOptions: FilterButton[] = [
   },
 ];
 
-export default function ProjectsPage() {
+interface ProjectsPageProps {
+  initialProjects: Project[];
+}
+
+export default function ProjectsPage({ initialProjects }: ProjectsPageProps) {
   const { locale } = useVariables();
   const { projects } = getTranslations(locale);
-  const { projectsData, loading } = useProjectsData();
   const [activeFilter, setActiveFilter] = useState<FilterOption>("all");
   const isArabic = locale === "ar";
 
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  // Optimized Mouse Movement with Motion Values
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
     };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [mouseX, mouseY]);
+
+  const x1 = useTransform(mouseX, (x) => x * 0.03);
+  const y1 = useTransform(mouseY, (y) => y * 0.03);
+
+  const x2 = useTransform(mouseX, (x) => x * -0.02);
+  const y2 = useTransform(mouseY, (y) => y * -0.02);
 
   const filteredProjects =
     activeFilter === "all"
-      ? projectsData
-      : projectsData.filter((p) => p.categories.includes(activeFilter));
-
-  if (loading)
-    return (
-      <div className="fixed top-0 left-0 w-full h-screen flex items-center justify-center z-9999 bg-gray-800">
-        <motion.div
-          animate={{ rotate: "360deg" }}
-          transition={{ duration: 1, repeat: Infinity }}
-        >
-          <VscLoading className="size-32 text-primary-color" />
-        </motion.div>
-      </div>
-    );
+      ? initialProjects
+      : initialProjects.filter((p) => p.categories.includes(activeFilter));
 
   return (
     <>
@@ -81,19 +85,21 @@ export default function ProjectsPage() {
         <div className="fixed inset-0 pointer-events-none">
           <motion.div
             className="absolute w-[500px] h-[500px] bg-primary-color/20 rounded-full blur-[120px]"
-            animate={{
-              x: mousePosition.x * 0.03,
-              y: mousePosition.y * 0.03,
+            style={{
+              left: "5%",
+              top: "10%",
+              x: x1,
+              y: y1,
             }}
-            style={{ left: "5%", top: "10%" }}
           />
           <motion.div
             className="absolute w-[400px] h-[400px] bg-purple-500/15 rounded-full blur-[100px]"
-            animate={{
-              x: mousePosition.x * -0.02,
-              y: mousePosition.y * -0.02,
+            style={{
+              right: "10%",
+              bottom: "20%",
+              x: x2,
+              y: y2,
             }}
-            style={{ right: "10%", bottom: "20%" }}
           />
         </div>
 
@@ -132,7 +138,7 @@ export default function ProjectsPage() {
             <div className="flex justify-center gap-8 pt-6">
               {[
                 {
-                  value: projectsData.length + "+",
+                  value: initialProjects.length + "+",
                   label: isArabic ? "مشروع" : "Projects",
                 },
                 { value: "100%", label: isArabic ? "متجاوب" : "Responsive" },

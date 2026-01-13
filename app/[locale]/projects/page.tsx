@@ -13,6 +13,9 @@ export const generateMetadata = async ({ params }: any) => {
   };
 };
 
-export default function ProjectsPageWrapper() {
-  return <ProjectsPage />;
+import { getProjects } from "@/app/lib/projects";
+
+export default async function ProjectsPageWrapper() {
+  const projects = await getProjects();
+  return <ProjectsPage initialProjects={projects} />;
 }

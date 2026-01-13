@@ -1,5 +1,5 @@
 // Types
-interface ProjectData {
+export interface ProjectData {
   folderName: string;
   title: { en: string; ar: string };
   description: { en: string; ar: string };

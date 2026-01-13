@@ -4,6 +4,7 @@ import Img from "@/app/_components/_global/Img";
 import GalleryLightbox from "./GalleryLightbox";
 import { useState } from "react";
 import { useVariables } from "@/app/context/VariablesContext";
+import { ProjectGalleryProps } from "./projectTypes";
 
 export default function ProjectGallery({ project }: ProjectGalleryProps) {
   const { locale } = useVariables();
@@ -12,19 +13,10 @@ export default function ProjectGallery({ project }: ProjectGalleryProps) {
   const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
   const [lightboxOpen, setLightboxOpen] = useState<boolean>(false);
   return (
-    <>
-      {/* Lightbox */}
-      <AnimatePresence>
-        {lightboxOpen && (
-          <GalleryLightbox
-            images={project.images}
-            folderName={project.folderName}
-            initialIndex={activeImageIndex}
-            onClose={() => setLightboxOpen(false)}
-          />
-        )}
-      </AnimatePresence>
-
+    <div
+      style={{ zIndex: lightboxOpen ? 9999999999 : 999999 }}
+      className={` relative`}
+    >
       <section className="relative pb-12 c-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -39,7 +31,7 @@ export default function ProjectGallery({ project }: ProjectGalleryProps) {
           >
             {project.images[activeImageIndex] && (
               <Img
-                src={`/Projects/${project.folderName}/${project.images[activeImageIndex]}`}
+                src={`${project.images[activeImageIndex]}`}
                 alt={project.title[locale]}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -64,7 +56,7 @@ export default function ProjectGallery({ project }: ProjectGalleryProps) {
                 }`}
               >
                 <Img
-                  src={`/Projects/${project.folderName}/${img}`}
+                  src={img}
                   alt={`Thumbnail ${idx + 1}`}
                   className="w-full h-full object-cover"
                 />
@@ -81,6 +73,17 @@ export default function ProjectGallery({ project }: ProjectGalleryProps) {
           </div>
         </motion.div>
       </section>
-    </>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxOpen && (
+          <GalleryLightbox
+            images={project.images}
+            initialIndex={activeImageIndex}
+            onClose={() => setLightboxOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

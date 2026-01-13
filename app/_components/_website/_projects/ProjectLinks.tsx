@@ -3,6 +3,18 @@
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaLock } from "react-icons/fa";
 
+interface ProjectLinksProps {
+  sourceCodeLink: string;
+  projectLink: string;
+  isPrivate: boolean;
+  projectCard: {
+    technologiesUsed: string;
+    sourceCode: string;
+    liveDemo: string;
+    privateRepo: string;
+  };
+}
+
 export default function ProjectLinks({
   sourceCodeLink,
   projectLink,

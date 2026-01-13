@@ -10,11 +10,11 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard } from "swiper/modules";
 import Img from "@/app/_components/_global/Img";
+import { GalleryLightboxProps } from "./projectTypes";
 
 // Lightbox Modal Component
 export default function GalleryLightbox({
   images,
-  folderName,
   initialIndex,
   onClose,
 }: GalleryLightboxProps) {
@@ -76,7 +76,7 @@ export default function GalleryLightbox({
             <SwiperSlide key={idx} className="flex items-center justify-center">
               <div className="w-full h-full flex items-center justify-center px-2 md:px-12">
                 <Img
-                  src={`/Projects/${folderName}/${image}`}
+                  src={image}
                   alt={`Image ${idx + 1}`}
                   className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
                 />

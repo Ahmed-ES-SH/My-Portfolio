@@ -1,50 +1,36 @@
-interface projectType {
-  folderName: string;
-  title: {
-    en: string;
-    ar: string;
-  };
-  description: {
-    en: string;
-    ar: string;
-  };
-  images: string[];
-  skills: string[];
-  linkSourceCode: string;
-  projectLink: string;
-  isPrivate: boolean;
-  categories: string[];
-}
+import { Project } from "@/app/lib/projects";
 
-interface GalleryLightboxProps {
+// Alias projectType to Project for backward compatibility with subcomponents
+export type projectType = Project;
+
+export interface GalleryLightboxProps {
   images: string[];
-  folderName: string;
   initialIndex: number;
   onClose: () => void;
 }
 
-interface FeatureCardProps {
+export interface FeatureCardProps {
   feature: string;
   index: number;
 }
 
-interface ProjectPageHeroProps {
+export interface ProjectPageHeroProps {
   project: projectType;
 }
 
-interface ProjectGalleryProps {
+export interface ProjectGalleryProps {
   project: projectType;
 }
 
-interface AboutProjectProps {
+export interface AboutProjectProps {
   project: projectType;
   t: any;
 }
 
-interface ProjectKeyFeaturesProps {
+export interface ProjectKeyFeaturesProps {
   project: projectType;
 }
 
-interface ProjectCTASectionProps {
+export interface ProjectCTASectionProps {
   project: projectType;
 }

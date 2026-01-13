@@ -3,6 +3,12 @@
 import { motion } from "framer-motion";
 import { FaCode } from "react-icons/fa";
 
+interface TechBadgeProps {
+  tech: string;
+  index: number;
+  length: number;
+}
+
 // TechBadge Component
 export default function TechBadge({ tech, index, length }: TechBadgeProps) {
   return (

@@ -17,6 +17,7 @@ import Img from "../../_global/Img";
 import ProjectLinks from "./ProjectLinks";
 import TechBadge from "./TechBadge";
 import LocaleLink from "../../_global/LocaleLink";
+import { Project } from "@/app/lib/projects";
 
 // Fullscreen Image Preview Modal
 function ImagePreviewModal({
@@ -121,8 +122,13 @@ function ImagePreviewModal({
   );
 }
 
+interface ProjectCardProps {
+  project: Project;
+  index: number;
+}
+
 // Main ProjectCard Component
-export default function ProjectCard({ project, index }: projectCardProps) {
+export default function ProjectCard({ project, index }: ProjectCardProps) {
   const { locale } = useVariables();
   const { projectCard } = getTranslations(locale);
 
@@ -198,7 +204,7 @@ export default function ProjectCard({ project, index }: projectCardProps) {
         animate="visible"
         className="w-full mx-auto bg-gray-800 rounded-2xl shadow-2xl overflow-hidden"
       >
-        <div className="flex flex-col xl:flex-row h-[500px] w-full ">
+        <div className="flex flex-col xl:flex-row xl:h-[500px] w-full ">
           {/* Left Side - Image Slider */}
           <motion.div
             variants={itemVariants}
@@ -235,7 +241,7 @@ export default function ProjectCard({ project, index }: projectCardProps) {
                       className="relative w-full h-full bg-gray-200 overflow-hidden group cursor-pointer"
                     >
                       <Img
-                        src={`/Projects/${project.folderName}/${image}`}
+                        src={image}
                         alt={project.title.en}
                         className="w-full h-full object-cover duration-300 group-hover:scale-105"
                       />
@@ -265,7 +271,7 @@ export default function ProjectCard({ project, index }: projectCardProps) {
           {/* Right Side - Project Details */}
           <motion.div
             variants={itemVariants}
-            className="xl:w-1/2 w-full p-4 xl:p-12 flex flex-col justify-center z-99999 h-[500px] overflow-y-auto relative"
+            className="xl:w-1/2 w-full p-4 xl:p-12 flex flex-col justify-center z-99999 xl:h-[500px] overflow-y-auto relative"
           >
             {/* Title */}
             <motion.h2
