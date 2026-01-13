@@ -5,6 +5,7 @@ export type ProjectCategory = "frontend" | "backend" | "fullstack";
 
 export interface Project {
   folderName: string;
+  slug: string; // New slug property
   title: { en: string; ar: string };
   description: { en: string; ar: string };
   images: string[];
@@ -19,6 +20,7 @@ export interface Project {
 const projectsConfig: Omit<Project, "images">[] = [
   {
     folderName: "aram",
+    slug: "aram-gulf",
     title: {
       en: "Aram-Gulf",
       ar: "Aram-Gulf",
@@ -39,13 +41,14 @@ const projectsConfig: Omit<Project, "images">[] = [
       "+8",
     ],
     linkSourceCode: "",
-    linkDocs: "aram-gulf/docs",
+    // linkDocs: "aram-gulf/docs",
     projectLink: "https://aram-gulf.com/en",
     isPrivate: true,
     categories: ["frontend", "backend", "fullstack"],
   },
   {
     folderName: "flix-tv",
+    slug: "flix-tv",
     title: {
       en: "FLIX TV",
       ar: "FLIX TV",
@@ -70,6 +73,7 @@ const projectsConfig: Omit<Project, "images">[] = [
   },
   {
     folderName: "mada-plus",
+    slug: "mada-plus",
     title: {
       en: "Mada Plus",
       ar: "Mada Plus",
@@ -96,6 +100,7 @@ const projectsConfig: Omit<Project, "images">[] = [
   },
   {
     folderName: "kafe",
+    slug: "kafe-wafe",
     title: {
       en: "Kafe-Wafe",
       ar: "Kafe-Wafe",
@@ -118,6 +123,7 @@ const projectsConfig: Omit<Project, "images">[] = [
   },
   {
     folderName: "machic",
+    slug: "machie-ecommerce-store",
     title: {
       en: "Machie Ecommerce Store",
       ar: "متجر - Machie",
@@ -141,6 +147,7 @@ const projectsConfig: Omit<Project, "images">[] = [
   },
   {
     folderName: "madad",
+    slug: "madad",
     title: {
       en: "Madad",
       ar: "مدد",
@@ -164,6 +171,7 @@ const projectsConfig: Omit<Project, "images">[] = [
   },
   {
     folderName: "borsan",
+    slug: "borsan-academy",
     title: {
       en: "Borsan Academy",
       ar: "أكاديمية بورسان",

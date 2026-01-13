@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
+import { FeatureCardProps } from "./projectTypes";
 
 // Feature Card Component
 export default function FeatureCard({ feature, index }: FeatureCardProps) {

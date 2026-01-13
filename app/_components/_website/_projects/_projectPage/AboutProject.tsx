@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useVariables } from "@/app/context/VariablesContext";
+import { AboutProjectProps } from "./projectTypes";
 
 export default function AboutProject({ project, t }: AboutProjectProps) {
   const { locale } = useVariables();

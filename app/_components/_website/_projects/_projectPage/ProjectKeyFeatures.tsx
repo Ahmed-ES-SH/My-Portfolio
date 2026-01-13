@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useVariables } from "@/app/context/VariablesContext";
 import FeatureCard from "./FeatureCard";
+import { ProjectKeyFeaturesProps } from "./projectTypes";
 
 export default function ProjectKeyFeatures({
   project,

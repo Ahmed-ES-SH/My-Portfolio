@@ -341,7 +341,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
               <motion.div variants={itemVariants} className="flex justify-end">
                 <LocaleLink
-                  href={`/projects/${project.folderName}`}
+                  href={`/projects/${project.slug}`}
                   className="text-primary-color hover:underline text-sm font-medium flex items-center gap-1 group/link"
                 >
                   {isArabic ? "عرض التفاصيل" : "View Details"}

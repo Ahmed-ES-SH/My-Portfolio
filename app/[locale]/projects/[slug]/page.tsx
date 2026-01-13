@@ -9,7 +9,7 @@ import { notFound } from "next/navigation";
 // Static params for build time
 export async function generateStaticParams() {
   const projects = await getProjects();
-  return projects.map((project) => ({ slug: project.folderName }));
+  return projects.map((project) => ({ slug: project.slug }));
 }
 
 export const generateMetadata = async ({ params }: any) => {
@@ -18,7 +18,7 @@ export const generateMetadata = async ({ params }: any) => {
   const sharedMetadata = getSharedMetadata(locale, translations);
 
   const projects = await getProjects();
-  const project = projects.find((p) => p.folderName === slug);
+  const project = projects.find((p) => p.slug === slug);
   const projectTitle = project ? project.title[locale as "en" | "ar"] : slug;
 
   return {
@@ -31,7 +31,7 @@ export const generateMetadata = async ({ params }: any) => {
 export default async function ProjectPage({ params }: any) {
   const { slug } = await params;
   const projects = await getProjects();
-  const project = projects.find((p) => p.folderName === slug);
+  const project = projects.find((p) => p.slug === slug);
 
   // If we wanted standard 404:
   // if (!project) notFound();

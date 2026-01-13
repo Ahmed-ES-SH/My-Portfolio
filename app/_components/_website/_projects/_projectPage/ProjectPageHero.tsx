@@ -4,6 +4,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import LocaleLink from "@/app/_components/_global/LocaleLink";
 import { useVariables } from "@/app/context/VariablesContext";
 import { categoryLabels } from "@/app/constants/content";
+import { ProjectPageHeroProps } from "./projectTypes";
 
 export default function ProjectPageHero({ project }: ProjectPageHeroProps) {
   const { locale } = useVariables();
