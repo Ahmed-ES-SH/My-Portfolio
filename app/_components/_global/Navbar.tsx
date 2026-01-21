@@ -1,7 +1,7 @@
 "use client";
 import LocaleLink from "./LocaleLink";
 import { useVariables } from "@/app/context/VariablesContext";
-import { links } from "@/app/constants/content";
+import { directionMap, links } from "@/app/constants/content";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -19,7 +19,8 @@ export default function Navbar() {
   const isArabic = locale == "ar";
   return (
     <div
-      className={`w-fit opacity-30 hover:opacity-100 duration-300 lg:top-1/2 lg:-translate-y-1/2 bottom-0 max-lg:w-full max-lg:left-0  max-lg:rounded-none  max-lg:bg-sky-500 fixed h-[300px] max-lg:h-fit  max-lg:flex-row gap-6  z-99999999 rounded-full  ${
+    dir={directionMap[locale]}
+      className={`w-fit opacity-50 hover:opacity-100 duration-300 lg:top-1/2 lg:-translate-y-1/2 bottom-0 max-lg:w-full max-lg:left-0  max-lg:rounded-none  max-lg:bg-sky-500 fixed h-[300px] max-lg:h-fit  max-lg:flex-row gap-6  z-99999999 rounded-full  ${
         isArabic ? "right-4" : "left-4"
       }   px-[10px] py-2  bg-primary-color hover:bg-sky-500 duration-200 cursor-pointer text-white/50 flex flex-col items-center justify-around`}
     >

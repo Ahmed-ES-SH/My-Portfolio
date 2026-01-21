@@ -24,6 +24,7 @@ export interface ProjectGalleryProps {
 
 export interface AboutProjectProps {
   project: projectType;
+  content: string;
   t: any;
 }
 

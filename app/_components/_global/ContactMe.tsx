@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { IoArrowDownOutline, IoLogoWhatsapp, IoMail } from "react-icons/io5";
 import { useVariables } from "@/app/context/VariablesContext";
 import { getTranslations } from "@/app/helpers/helpers";
+import { directionMap } from "@/app/constants/content";
 
 type languageType = {
   label: string;
@@ -66,12 +67,12 @@ export default function ContactMe() {
   };
 
   return (
-    <div className="c-container pt-6 z-9999 flex justify-between items-center py-4 absolute top-3 left-1/2 -translate-x-1/2">
+    <div dir={directionMap[locale]} className="c-container pt-6 z-9999 flex justify-between items-center py-4 absolute top-3 left-1/2 -translate-x-1/2">
       <LocaleLink className="max-md:hidden outline-none" href="/">
         <Img src="/logo.png" className="w-32 object-contain" />
       </LocaleLink>
 
-      <div className="flex items-center w-fit h-[50px] rounded-md">
+      <div dir="ltr" className="flex items-center w-fit h-[50px] rounded-md">
         <div className="relative h-full" ref={dropdownRef}>
           <div
             onClick={() => setIsOpen(!isOpen)}

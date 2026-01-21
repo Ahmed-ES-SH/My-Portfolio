@@ -15,8 +15,10 @@ import { Project } from "@/app/lib/projects";
 // Main ProjectDetailPage Component
 export default function ProjectDetailPage({
   project,
+  content,
 }: {
   project: Project | null;
+  content: string;
 }) {
   const { locale } = useVariables();
   const { projectCard } = getTranslations(locale);
@@ -44,9 +46,13 @@ export default function ProjectDetailPage({
   if (!project) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-6">
-        <h1 className="text-3xl font-bold text-white">
-          {isArabic ? "المشروع غير موجود" : "Project Not Found"}
-        </h1>
+        <div className="flex flex-col  items-center justify-center gap-3 font-bold text-white">
+          <span className="text-primary-color text-6xl">404</span>{" "}
+          <h1 className="text-3xl">
+            {" "}
+            {isArabic ? "المشروع غير موجود" : "Project Not Found"}
+          </h1>
+        </div>
         <LocaleLink
           href="/projects"
           className="px-6 py-3 bg-primary-color text-white rounded-lg hover:bg-primary-color/80 transition-colors"
@@ -91,7 +97,7 @@ export default function ProjectDetailPage({
       <ProjectGallery project={project} />
 
       {/* ============ SECTION 3: ABOUT & TECH ============ */}
-      <AboutProject project={project} t={projectCard} />
+      <AboutProject project={project} content={content} t={projectCard} />
 
       {/* ============ SECTION 4: KEY FEATURES ============ */}
       <ProjectKeyFeatures project={project} />

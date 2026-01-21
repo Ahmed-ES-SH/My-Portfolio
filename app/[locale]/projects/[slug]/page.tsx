@@ -4,7 +4,8 @@ import ProjectDetailPage from "@/app/_components/_website/_projects/_projectPage
 import { getSharedMetadata } from "@/app/helpers/getSharedMetadata ";
 import { getTranslations } from "@/app/helpers/helpers";
 import { getProjects } from "@/app/lib/projects";
-import { notFound } from "next/navigation";
+
+
 
 // Static params for build time
 export async function generateStaticParams() {
@@ -29,12 +30,15 @@ export const generateMetadata = async ({ params }: any) => {
 };
 
 export default async function ProjectPage({ params }: any) {
-  const { slug } = await params;
+  const { slug , locale } = await params;
   const projects = await getProjects();
   const project = projects.find((p) => p.slug === slug);
+  const projectContent = await import(`@/app/constants/projects/${slug}.json`);
+  const content = projectContent.default.content[locale];
+  
 
   // If we wanted standard 404:
   // if (!project) notFound();
 
-  return <ProjectDetailPage project={project || null} />;
+  return <ProjectDetailPage project={project || null} content={content} />;
 }

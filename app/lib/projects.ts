@@ -13,6 +13,7 @@ export interface Project {
   linkSourceCode: string;
   linkDocs?: string;
   projectLink: string;
+  projectCover: string;
   isPrivate: boolean;
   categories: ProjectCategory[];
 }
@@ -40,6 +41,7 @@ const projectsConfig: Omit<Project, "images">[] = [
       "API",
       "+8",
     ],
+    projectCover: "/projects-covers/Aram-design-2.jpg",
     linkSourceCode: "",
     // linkDocs: "aram-gulf/docs",
     projectLink: "https://aram-gulf.com/en",
@@ -66,6 +68,7 @@ const projectsConfig: Omit<Project, "images">[] = [
       "Clerk",
       "Responsive Design",
     ],
+    projectCover: "/projects-covers/flix-tv-cover-2.jpg",
     linkSourceCode: "https://github.com/Ahmed-ES-SH/TMDB-App",
     projectLink: "https://tmdb-app-kappa.vercel.app",
     isPrivate: false,
@@ -93,6 +96,7 @@ const projectsConfig: Omit<Project, "images">[] = [
       "API",
       "+5",
     ],
+    projectCover: "/projects-covers/mada-plus-cover.jpg",
     linkSourceCode: "",
     projectLink: "https://mada-plus.com/en",
     isPrivate: true,
@@ -116,6 +120,7 @@ const projectsConfig: Omit<Project, "images">[] = [
       "Framer Motion",
       "Responsive Design",
     ],
+    projectCover: "/projects-covers/kafe-wafe-cover.jpg",
     linkSourceCode: "https://github.com/Ahmed-ES-SH/kafe-frontend",
     projectLink: "https://kafe-front.vercel.app/en",
     isPrivate: false,
@@ -140,6 +145,7 @@ const projectsConfig: Omit<Project, "images">[] = [
       "zuStand",
       "Responsive Design",
     ],
+    projectCover: "/projects-covers/machie-cover.jpg",
     linkSourceCode: "https://github.com/Ahmed-ES-SH/machie-store",
     projectLink: "https://machie-store.vercel.app",
     isPrivate: false,
@@ -164,6 +170,7 @@ const projectsConfig: Omit<Project, "images">[] = [
       "Real-time Features",
       "Responsive Design",
     ],
+    projectCover: "/projects-covers/madad-cover.jpg",
     linkSourceCode: "https://github.com/Ahmed-ES-SH/Madad",
     projectLink: "https://madad-rust.vercel.app",
     isPrivate: false,
@@ -188,10 +195,43 @@ const projectsConfig: Omit<Project, "images">[] = [
       "Responsive Design",
       "MultiLanguages",
     ],
+    projectCover: "/projects-covers/borsan-cover-2.jpg",
     linkSourceCode: "https://github.com/Ahmed-ES-SH/Borsan-Academy",
     projectLink: "https://borsan-frontend.vercel.app",
     isPrivate: false,
     categories: ["frontend"],
+  },
+  {
+    folderName: "stichting-mostakbal",
+    slug: "stichting-mostakbal",
+    title: {
+      en: "Stichting Mostakbal",
+      ar: "بوابة المستقبل",
+    },
+    description: {
+      en: "Stichting Mostakbal is a Dutch-oriented digital platform representing a charitable organization that provides humanitarian aid and supports those in need. It offers a structured digital interface to showcase the organization's activities and manage charitable content centrally. The platform features an interactive front-end built with Next.js and supports modern interface design, animations, interactive maps, state management, and secure API handling. The back-end is powered by Laravel with full control over content, media, authentication, and database management.",
+      ar: "منصة بوابة المستقبل هي منصة رقمية ذات توجه هولندي تمثل جمعية خيرية تهدف إلى تقديم المساعدات الإنسانية ودعم المحتاجين، مع واجهة رقمية منظمة لعرض أنشطة الجمعية وإدارة المحتوى الخيري بشكل مركزي. تحتوي المنصة على واجهة أمامية تفاعلية مبنية باستخدام Next.js، وتدعم تصميم واجهات حديثة، الحركات والانتقالات، الخرائط التفاعلية، إدارة الحالة، والتعامل الآمن مع الـ API. الواجهة الخلفية تعمل بواسطة Laravel وتتحكم بشكل كامل في المحتوى، الوسائط، التحقق من الصلاحيات، وإدارة قاعدة البيانات.",
+    },
+    skills: [
+      "Next.js",
+      "TailwindCSS",
+      "Framer Motion",
+      "Radix UI",
+      "Redux Toolkit",
+      "Axios",
+      "Leaflet",
+      "Swiper",
+      "Laravel",
+      "PHP 8.2",
+      "Laravel Sanctum",
+      "Spatie Media Library",
+      "Spatie Image Optimizer",
+    ],
+    projectCover: "/projects-covers/stichting-mostakbal.jpg",
+    linkSourceCode: "",
+    projectLink: "https://stichtingmostakbal.nl/nl",
+    isPrivate: true,
+    categories: ["frontend", "backend", "fullstack"],
   },
 ];
 
@@ -218,7 +258,7 @@ export async function getProjects(): Promise<Project[]> {
         ...project,
         images,
       };
-    })
+    }),
   );
 
   return projects;

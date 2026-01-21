@@ -10,7 +10,7 @@ import {
 } from "framer-motion";
 import { Project, ProjectCategory } from "@/app/lib/projects";
 import { directionMap } from "@/app/constants/content";
-import ProjectCard from "@/app/_components/_website/_projects/ProjectCard";
+import ProjectCard from "@/app/_components/_website/_projects/_projectCard/ProjectCard";
 import { FaCode, FaServer, FaLayerGroup, FaRocket } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 

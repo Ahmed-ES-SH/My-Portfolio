@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import { useVariables } from "@/app/context/VariablesContext";
 import { AboutProjectProps } from "./projectTypes";
 
-export default function AboutProject({ project, t }: AboutProjectProps) {
+export default function AboutProject({ project , content, t }: AboutProjectProps) {
   const { locale } = useVariables();
   const isArabic = locale === "ar";
+
   return (
     <section className="relative py-12 c-container">
       <div className="grid grid-cols-1 gap-12">
@@ -20,8 +21,8 @@ export default function AboutProject({ project, t }: AboutProjectProps) {
             <div className="w-1.5 h-8 bg-primary-color rounded-full" />
             {isArabic ? "عن المشروع" : "About This Project"}
           </h2>
-          <p className="text-gray-400 leading-relaxed text-lg">
-            {project.description[locale]}
+          <p className="text-gray-400 leading-relaxed text-lg whitespace-pre-wrap">
+            {content ?? project.description[locale]}
           </p>
         </motion.div>
 
